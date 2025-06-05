@@ -39,7 +39,7 @@ public class ItemServiceWebClient implements  ItemService{
                 .get() // se utiliza el método get() para realizar una solicitud HTTP GET al servicio.
                 // El método get() devuelve un objeto WebClient.RequestHeadersSpec que permite configurar la solicitud,
                 // como establecer encabezados, parámetros de consulta, etc.
-                .uri("http://msvc-products") // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
+                //.uri("http://msvc-products") // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
                 // En este caso, se está utilizando una URL relativa que se resolverá en función de la configuración del WebClient.
                 .accept(MediaType.APPLICATION_JSON)// se utiliza el método accept() para establecer el tipo de contenido que se espera recibir en la respuesta.
                 // En este caso, se está indicando que se espera recibir una respuesta en formato JSON.
@@ -79,7 +79,7 @@ public class ItemServiceWebClient implements  ItemService{
             try {
                 return Optional.ofNullable( cliente.build() // se utiliza el método build() del WebClient.Builder para crear una instancia de WebClient.
                     .get() // se utiliza el método get() para realizar una solicitud HTTP GET al servicio.
-                    .uri("http://msvc-products/{id}", param) // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
+                    .uri("/{id}", param) // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
                     // En este caso, se está utilizando una URL relativa que incluye un parámetro de ruta {id} que se reemplazará con el valor del ID proporcionado.
                     // El mapa param se utiliza para pasar el valor del ID como parámetro de ruta.
                     .accept(MediaType.APPLICATION_JSON) // se utiliza el método accept() para establecer el tipo de contenido que se espera recibir en la respuesta.

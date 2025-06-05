@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-MsvcProductApplication-8001",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.damian.springcloud.msvc.product.MsvcProductApplication",
+      "projectName": "msvc-product",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": "-Dspring.profiles.active=msvc-product -Dserver.port=8001"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-MsvcProductApplication-9001",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.damian.springcloud.msvc.product.MsvcProductApplication",
+      "projectName": "msvc-product",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": "-Dspring.profiles.active=msvc-product -Dserver.port=9001"
+    }
+  ]
+}
+// se dublican los valores para configurar los distintos puertos
