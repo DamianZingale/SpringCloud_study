@@ -1,0 +1,8 @@
+/home/damian/Escritorio/msvc-items/src/main/java/anotaciones_varias.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/MsvcItemsApplication.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/clientHttp/productsFeingClient.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/controllers/ItemController.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/models/Items.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/models/Product.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/services/ItemService.java
+/home/damian/Escritorio/msvc-items/src/main/java/com/damian/springcloud/msvc/items/services/ItemsServiceFeign.java
