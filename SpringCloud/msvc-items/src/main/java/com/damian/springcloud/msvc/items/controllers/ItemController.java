@@ -32,7 +32,15 @@ public class ItemController {
 
      @GetMapping
      public List<Items> getAllItems() {
-         return itemService.findAll();
+         List<Items> item = itemService.findAll();
+         if (item.isEmpty()) {
+             // Si la lista de items está vacía, se puede lanzar una excepción o retornar un mensaje de error
+             // return ResponseEntity.status(404).body(Collections.singletonMap("message", "No hay items disponibles en el microservicio mvsc-products"));
+             return Collections.emptyList(); // Retorna una lista vacía si no hay items
+         }else {
+             // Si la lista de items no está vacía, se retorna la lista de items
+             return item;
+         }
      }
 
      @GetMapping("/{id}")

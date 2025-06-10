@@ -18,7 +18,7 @@ import com.damian.springcloud.msvc.product.services.ProductService;
 //@Controller trabaja con Thymeleaf
 //@RequestMapping("/products") // se puede usar para definir la ruta base de todos los endpoints
 // @CrossOrigin(origins = "http://localhost:8080") // permite el acceso a la API desde un origen diferente
-@RequestMapping("/api/products") // define la ruta base de los endpoints de este controlador
+@RequestMapping //("/api/products") //define la ruta base de los endpoints de este controlador
 public class ProductsController{
 
     final ProductService service;

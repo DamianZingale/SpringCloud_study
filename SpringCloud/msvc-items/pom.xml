@@ -70,12 +70,12 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- load balancer se puede quitar ya que eureka se encarga de esto, pero si se quiere usar el load balancer de spring cloud se puede dejar 
+		<!-- load balancer se puede quitar ya que eureka se encarga de esto, pero si se quiere usar el load balancer de spring cloud se puede dejar -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
 			
-		</dependency> -->
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
