@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -15,7 +16,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import com.damian.springcloud.msvc.items.models.Items;
 import com.damian.springcloud.msvc.items.models.Product;
 
-//@Primary // se utiliza la anotación @Primary para indicar que este bean debe ser preferido cuando hay múltiples implementaciones del mismo tipo.
+@Primary // se utiliza la anotación @Primary para indicar que este bean debe ser preferido cuando hay múltiples implementaciones del mismo tipo.
 // En este caso, se está indicando que esta implementación de ItemService debe ser preferida sobre otras implementaciones
 // cuando se inyecta el ItemService en otros componentes de la aplicación.
 // Esto es útil cuando se tienen múltiples implementaciones de un servicio y se desea que una de ellas sea la predeterminada.
@@ -39,7 +40,7 @@ public class ItemServiceWebClient implements  ItemService{
                 .get() // se utiliza el método get() para realizar una solicitud HTTP GET al servicio.
                 // El método get() devuelve un objeto WebClient.RequestHeadersSpec que permite configurar la solicitud,
                 // como establecer encabezados, parámetros de consulta, etc.
-                //.uri("http://msvc-products") // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
+                .uri("http://msvc-product") // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
                 // En este caso, se está utilizando una URL relativa que se resolverá en función de la configuración del WebClient.
                 .accept(MediaType.APPLICATION_JSON)// se utiliza el método accept() para establecer el tipo de contenido que se espera recibir en la respuesta.
                 // En este caso, se está indicando que se espera recibir una respuesta en formato JSON.
@@ -79,7 +80,7 @@ public class ItemServiceWebClient implements  ItemService{
             try {
                 return Optional.ofNullable( cliente.build() // se utiliza el método build() del WebClient.Builder para crear una instancia de WebClient.
                     .get() // se utiliza el método get() para realizar una solicitud HTTP GET al servicio.
-                    .uri("/{id}", param) // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
+                    .uri("http://msvc-product/{id}", param) // se utiliza el método uri() para especificar la URI del servicio al que se desea realizar la solicitud.
                     // En este caso, se está utilizando una URL relativa que incluye un parámetro de ruta {id} que se reemplazará con el valor del ID proporcionado.
                     // El mapa param se utiliza para pasar el valor del ID como parámetro de ruta.
                     .accept(MediaType.APPLICATION_JSON) // se utiliza el método accept() para establecer el tipo de contenido que se espera recibir en la respuesta.

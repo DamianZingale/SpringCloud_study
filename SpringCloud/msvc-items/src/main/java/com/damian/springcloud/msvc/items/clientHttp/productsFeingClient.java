@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.damian.springcloud.msvc.items.models.Product;
 
-@FeignClient(name = "msvc-products") // Aquí se define el cliente Feign para llamar al microservicio de productos 
+@FeignClient(name = "msvc-product") // Aquí se define el cliente Feign para llamar al microservicio de productos 
 // con Eureka seria solo el nombre del servicio.
 // Feign es una librería que permite hacer llamadas HTTP de manera sencilla y declarativa
 //Esta interfaz representa otro microservicio al que quiero llamar por HTTP, y quiero que me generes la implementación automáticamente
