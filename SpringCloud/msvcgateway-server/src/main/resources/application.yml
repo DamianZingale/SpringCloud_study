@@ -1,19 +1,19 @@
 spring:
   cloud:
     gateway:
-      webflux: #a partir de spring 3.2 es necesario poner webflux. Porque el gateway es un proyecto que usa webflux (reactivo).
-        routes:
-        - id: msvc-product
-          uri: lb://msvc-product #lb es el load balancer de gateway
-          predicates:
-          - Path=/api/products/**
-          filters:
-          - StripPrefix=2 # Elimina la cantidad de segmentos de la ruta
+      #webflux: a partir de spring 3.2 es necesario poner webflux. Porque el gateway es un proyecto que usa webflux (reactivo) pero aun en modo experimental
+      routes:
+      - id: msvc-product
+        uri: lb://msvc-product #lb es el load balancer de gateway
+        predicates:
+        - Path=/api/products/**
+        filters:
+        - StripPrefix=2 # Elimina la cantidad de segmentos de la ruta
 
-        - id: msvc-items
-          uri: lb://msvc-items #lb es el load balancer de gateway
-          predicates:
-          - Path=/api/items/**
-          filters:
-          - StripPrefix=2 # Elimina la cantidad de segmentos de la ruta
+      - id: msvc-items
+        uri: lb://msvc-items #lb es el load balancer de gateway
+        predicates:
+        - Path=/api/items/**
+        filters:
+        - StripPrefix=2 # Elimina la cantidad de segmentos de la ruta
      
